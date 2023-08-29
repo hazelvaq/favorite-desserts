@@ -23,7 +23,8 @@ dessert_listing <- dessert_elements %>%
 iconic_desserts <- read_csv(here("data","iconic_desserts.csv"))
 
 favorite_desserts <- read_csv("favorite_desserts.csv") %>% clean_names()
+favorite_desserts <- favorite_desserts %>% rename(dessert = favorite_dessert)
 
 inner_join(iconic_desserts,favorite_desserts, by = 'dessert')
 
-favorite_desserts <- favorite_desserts %>% rename(dessert = favorite_dessert)
+
